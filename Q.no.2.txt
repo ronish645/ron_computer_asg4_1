@@ -1,0 +1,20 @@
+﻿ORG 100           / Start of the program in memory location 100
+    LOAD ZERO     / Load the constant 0 into the Accumulator
+    STORE I       / Store the value from the Accumulator into the variable I (initializes loop counter to 0)
+
+LOOP, LOAD I      / Load the current value of the loop counter I into the Accumulator
+    SUBT THREE    / Subtract the constant value 3 from the Accumulator (to check for the break condition)
+    SKIPCOND 000  / Skip the next instruction if the Accumulator is zero (i.e., I is 3)
+    JUMP ENDLOOP  / If I is 3, jump to the end of the loop, effectively breaking it
+    LOAD I        / Re-load I into the Accumulator because SKIPCOND does not alter the Accumulator
+    OUTPUT        / Output the current value of I
+    ADD ONE       / Add the constant value 1 to the Accumulator (to increment I)
+    STORE I       / Store the new value back into I
+    JUMP LOOP     / Jump back to the beginning of the loop
+
+ENDLOOP, HALT     / End of the loop and halt the program
+
+I, DEC 0          / Declare variable I and initialize it to 0
+ONE, DEC 1        / Declare a constant ONE and initialize it to 1
+THREE, DEC 3      / Declare a constant THREE and initialize it to 3 (used for our break condition)
+ZERO, DEC 0       / Declare a constant ZERO and initialize it to 0 (used for initializing I)

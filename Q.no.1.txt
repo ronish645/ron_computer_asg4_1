@@ -1,0 +1,19 @@
+﻿
+
+ORG 100        // Start at memory location 100
+   Load H      // Load ASCII of 'H'
+   Output      
+   Load e      // Load ASCII of 'e'
+   Output      
+   Load l      // Load ASCII of 'l'
+   Output     
+   Load l      // Load ASCII of 'l' again
+   Output     
+   Load o      // Load ASCII of 'o'
+   Output     
+   Halt        
+
+H, HEX 48      // ASCII value for 'H'
+e, HEX 65      // ASCII value for 'e'
+l, HEX 6C      // ASCII value for 'l'
+o, HEX 6F      // ASCII value for 'o'\\
