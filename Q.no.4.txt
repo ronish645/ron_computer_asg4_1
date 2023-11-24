@@ -1,0 +1,31 @@
+﻿ORG 100          / Start of the program at memory address 100
+INPUT            / Input the first number (should be 4)
+STORE NUMBER     / Store the first input number in 'NUMBER'
+INPUT            / Input the second number (should be 3)
+STORE ITERATIONS / Store the second input number in 'ITERATIONS'
+LOAD ZERO        / Initialize 'RESULT' to 0
+STORE RESULT     / Store the initialization in 'RESULT'
+
+LOAD ITERATIONS  / Load the number of iterations (3)
+STORE COUNTER    / Store the number of iterations in 'COUNTER' for loop control
+
+ADD_LOOP, LOAD RESULT  / Start of loop, load the current value of 'RESULT'
+ADD NUMBER             / Add the value of 'NUMBER' to 'RESULT'
+STORE RESULT           / Store the new value of 'RESULT'
+LOAD COUNTER           / Load the current value of 'COUNTER'
+SUBT ONE               / Subtract 1 from 'COUNTER'
+STORE COUNTER          / Store the new value of 'COUNTER'
+
+SKIPCOND 400           / Check if 'COUNTER' is zero
+JUMP ADD_LOOP          / If not, repeat the loop
+
+LOAD RESULT            / Load the final result
+OUTPUT                 / Output the result
+HALT                   / Stop the program
+
+ZERO, DEC 0            / Constant value 0
+ONE, DEC 1             / Constant value 1
+NUMBER, DEC 0          / Will hold the first input number
+ITERATIONS, DEC 0      / Will hold the second input number
+RESULT, DEC 0          / Will hold the final result
+COUNTER, DEC 0         / Used for loop control
