@@ -1,0 +1,28 @@
+﻿ORG 100           
+Load X            / Load value of x
+Store X           
+Loop, Load X      
+Subt F            / Subtract the value of F from the accumulator
+Skipcond 000       / Skip the next instruction if the accumulator is less than 0
+Jump ENDLOOP        
+Load X            / Load the value of X into the accumulator
+Subt T            / Subtract the value of T from the accumulator
+Skipcond 400       / Skip the next instruction if the accumulator is greater than or equal to 0
+Jump Loop1         / Jump to the Loop1 label if the accumulator is less than 0
+Jump Continue      / Jump to the Continue label
+Output            / Output the value in the accumulator
+Loop1, Load X     
+Output            / Output the value in the accumulator
+Add O             / Add the value of O to the accumulator
+Store X           / Store the accumulator value back into X
+Jump Loop         / Jump back to the Loop label to repeat the loop
+ENDLOOP, Halt     / Halt the program at the ENDLOOP label
+Continue, Load X  
+Add O             / Add the value of O to the accumulator
+Store X           / Store the accumulator value back into X
+Jump Loop         
+X, Dec 0           / Initialize X to 0
+T, Dec 3           
+O, Dec 1           
+F, Dec 5  
+END 100           / End of the program
